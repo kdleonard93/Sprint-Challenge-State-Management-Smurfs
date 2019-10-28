@@ -5,19 +5,21 @@ export const initialState = {
   smurfs: []
 };
 
-export function reducer(initialState, action) {
+function reducer(initialState, action) {
   switch (action.type) {
-    case "GET_SMURF":
+    case { GET_SMURF }:
       return {
         smurfs: action.payload
       };
 
-    case "POST_SMURF":
+    case { POST_SMURF }:
       return {
         smurfs: [...initialState, action.payload]
       };
 
     default:
-      return state;
+      return initialState;
   }
 }
+
+export default reducer;

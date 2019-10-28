@@ -13,16 +13,16 @@ function App(props) {
   );
 }
 
-// const mapStateToProps = {
-//   getSmurfs
-// };
+const mapStateToProps = {
+  getSmurfs
+};
 
-// function mapDispatchToProps(state) {
-//   return {
-//     name: state.name,
-//     age: state.age,
-//     height: state.height
-//   };
-// }
+function mapDispatchToProps(state) {
+  return {
+    name: state.name,
+    age: state.age,
+    height: state.height
+  };
+}
 
 export default App;
