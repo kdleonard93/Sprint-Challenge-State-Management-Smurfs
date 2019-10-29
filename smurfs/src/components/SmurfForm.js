@@ -80,9 +80,9 @@ export default withFormik({
     };
   },
   validationSchema: yup.object().shape({
-    plant_name: yup.string().required("Add plant name"),
-    age: yup.string().required("What's it's species?"),
-    height: yup.string().required("Make a Schedule!")
+    name: yup.string().required(),
+    age: yup.string().required(),
+    height: yup.string().required()
   }),
   handleSubmit: (smurfs, { props, setStatus, resetForm }) => {
     axios
