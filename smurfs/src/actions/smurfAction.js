@@ -6,7 +6,7 @@ export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS";
 export const FETCH_SMURFS_FAIL = "FETCH_SMURFS_FAIL";
 export const POST_SMURF = "POST_SMURF";
 
-const GetSmurf = () => dispatch => {
+export const getSmurf = () => dispatch => {
   dispatch({ type: "FETCH_SMURF_START" });
 
   axios
@@ -15,7 +15,7 @@ const GetSmurf = () => dispatch => {
     .catch(err => dispatch({ type: "FETCH_SMURF_FAIL", payload: err }));
 };
 
-const PostSmurf = newSmurf => {
+export const postSmurf = newSmurf => {
   return dispatch => {
     axios
       .post("http://localhost:3333/smurfs", newSmurf)
@@ -27,5 +27,3 @@ const PostSmurf = newSmurf => {
       });
   };
 };
-
-export default { PostSmurf, GetSmurf };

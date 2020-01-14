@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import PostSmurf from "../actions/smurfAction";
+import { postSmurf } from "../actions/smurfAction";
 
 function SmurfForm(props) {
+  console.log(props);
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [height, setHeight] = useState("");
@@ -24,7 +25,7 @@ function SmurfForm(props) {
       age: age,
       height: height
     };
-    PostSmurf(smurf);
+    props.postSmurf(smurf);
   };
 
   return (
@@ -60,4 +61,4 @@ function SmurfForm(props) {
   );
 }
 
-export default SmurfForm;
+export default connect(null, { postSmurf })(SmurfForm);

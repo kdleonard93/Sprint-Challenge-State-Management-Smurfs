@@ -1,6 +1,6 @@
 export {
-  FETCH_SMURF_START,
-  FETCH_SMURF_SUCCESS,
-  FETCH_SMURF_FAILURE,
+  FETCH_SMURFS_START,
+  FETCH_SMURFS_SUCCESS,
+  FETCH_SMURFS_FAIL,
   POST_SMURF
-} from "./smurfActions";
+} from "./smurfAction";

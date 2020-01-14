@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getSmurf } from "../actions/smurfAction";
 
 function SmurfCard(props) {
+  console.log(props);
+  useEffect(() => {
+    props.getSmurf();
+  }, []);
+
   return (
     <div className="smurf">
       <h2>Name:{props.name}</h2>
@@ -9,4 +16,12 @@ function SmurfCard(props) {
     </div>
   );
 }
-export default SmurfCard;
+
+export default connect(
+  function(state) {
+    return {
+      smurf: state.smurf
+    };
+  },
+  { getSmurf }
+)(SmurfCard);

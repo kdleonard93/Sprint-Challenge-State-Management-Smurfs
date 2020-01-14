@@ -3,7 +3,7 @@ import {
   FETCH_SMURFS_START,
   FETCH_SMURFS_FAIL,
   POST_SMURF
-} from "../actions";
+} from "../actions/";
 
 const initialState = {
   smurf: [
@@ -17,7 +17,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  console.log("reducer", action)
+  console.log("reducer", action);
   switch (action.type) {
     case FETCH_SMURFS_START:
       return {
@@ -29,16 +29,16 @@ const reducer = (state = initialState, action) => {
       console.log("state", action.payload);
       return {
         ...state,
-        smurf: action.payload
+        smurf: action.payload,
         isFetching: false,
         error: ""
       };
 
-      case FETCH_SMURFS_FAIL:
-        return {
-          ...state,
-          error: action.payload
-        }
+    case FETCH_SMURFS_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      };
 
     case POST_SMURF:
       return {
