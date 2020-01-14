@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import PostSmurf from "../actions/smurfAction";
 
-function SmurfForm({ postSmurf }) {
+function SmurfForm(props) {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [height, setHeight] = useState("");
@@ -23,7 +24,7 @@ function SmurfForm({ postSmurf }) {
       age: age,
       height: height
     };
-    postSmurf(smurf);
+    PostSmurf(smurf);
   };
 
   return (

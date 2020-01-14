@@ -12,7 +12,7 @@ const initialState = {
       age: null,
       height: ""
     }
-  ]
+  ],
   isFetching: false
 };
 
